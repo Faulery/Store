@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="primary/Hibernate">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="base">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="cookbook"/>
+    <schema id="3" name="information_schema"/>
+    <schema id="4" name="library"/>
+    <schema id="5" name="mysql"/>
+    <schema id="6" name="performance_schema"/>
+    <schema id="7" name="sakila"/>
+    <schema id="8" name="spring"/>
+    <schema id="9" name="sys"/>
+    <schema id="10" name="test_base"/>
+    <schema id="11" name="world"/>
+    <table id="12" parent="1" name="laptop"/>
+    <table id="13" parent="1" name="news"/>
+    <table id="14" parent="1" name="user"/>
+    <table id="15" parent="1" name="user_laptop"/>
+    <column id="16" parent="12" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="17" parent="12" name="availability">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="18" parent="12" name="brand">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="19" parent="12" name="color">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="20" parent="12" name="description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="21" parent="12" name="prise">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="22" parent="12" name="quantity">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="23" parent="12" name="rating">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="24" parent="12" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="25" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="26" parent="13" name="description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="27" parent="13" name="title">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="28" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="29" parent="14" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="30" parent="14" name="email">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="31" parent="14" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="32" parent="14" name="password">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="33" parent="14" name="role">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="34" parent="14" name="serName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="35" parent="14" name="pathImage">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="36" parent="14" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="37" parent="15" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="38" parent="15" name="laptop_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="39" parent="15" name="FK86ttxo0l0fxu0024gwf7rinxy">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="40" parent="15" name="PRIMARY">
+      <columns>laptop_id
+user_id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="41" parent="15" name="FK86ttxo0l0fxu0024gwf7rinxy">
+      <columns>user_id</columns>
+      <ref-key>~.user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="42" parent="15" name="FK9202pgj9vxympb0999c5boiq1">
+      <columns>laptop_id</columns>
+      <ref-key>~.laptop.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>
